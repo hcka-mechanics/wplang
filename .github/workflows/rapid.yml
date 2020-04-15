@@ -1,0 +1,19 @@
+name: YML
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '1/6 * * * *'
+jobs:
+  work:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: wplang rebuild work
+      run: source   ./do-wplang
+  quick:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: wplang rebuild quick
+      run: source  ./do-wplang
